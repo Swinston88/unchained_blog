@@ -7,6 +7,13 @@
     <div class="post">
         {% if post.published_date %}
             <div class="date">
+                <p>{{ post.published_date }} </p>
+                <p>{{ post.author.username }} </p>
+                <p>Categories:
+                  {% for category in categories %}
+                    <a href="{% url 'get_category' category_text=category.text %}">{{ category.text }}</a>
+                  {% endfor %}
+                </p>
                 <p> {{ post.published_date }} </p>
                 <p><a href="{% url 'user_profile' pk=post.author.id %}" >{{ post.author.username }}</a></p>
             </div>
@@ -54,14 +61,20 @@
     {% endif %}
 
     {% if user.is_authenticated %}
+        <h1>Add a category</h1>
+        <form method="POST" class="category-form">{% csrf_token %}
+            {{ category_form.as_p }}
+            <button type="submit" class="save btn btn-default">Post category</button>
+        </form>
+    {% endif %}
+
+    {% if user.is_authenticated %}
+        <h1>Add a comment</h1>
+        <form method="POST" class="comment-form">{% csrf_token %}
+            {{ comment_form.as_p }}
+            <button type="submit" class="save btn btn-default">Post comment</button>
+        </form>
         <div>
-            {% if post.published_date %}
-                <button id='add-comment' class="save btn btn-default add-comment">Comment</button>
-            {% endif %}
-            <form method="POST" class="comment-form">{% csrf_token %}
-                {{ comment_form.as_p }}
-                <button type="submit" class="save btn btn-default">Post comment</button>
-            </form>
         </div>
     {% endif %}
     <!-- <script src="{% static "javascript/like.js" %}"></script> -->
