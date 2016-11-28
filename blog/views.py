@@ -223,17 +223,11 @@ def user_profile(request, pk):
 
 
 def like(request, pk):
-# if request.method == 'POST':
-#     new_like, created = Like.objects.get_or_create(user=request.user, post_id=pk)
-#     likes = Like.objects.filter(post_id=pk).count()
-#     ctx = {'likes': likes}
-#     return HttpResponse(json.dumps(ctx), content_type='application/json')
     liked = Like.objects.filter(user=request.user, post_id=pk)
     if liked:
         liked.delete()
     else:
         Like.objects.create(user=request.user, post_id=pk)
-    # new_like, created = Like.objects.get_or_create(user=request.user, post_id=pk)
     return redirect('post_detail', pk=pk)
 
 def unlike(request, pk):
