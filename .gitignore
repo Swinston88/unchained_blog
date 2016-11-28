@@ -1,6 +1,6 @@
 # ignore __pycache__ files
 __pycache__/
-oursite/__pycache__/*
+mysite/__pycache__/*
 *.pyc
 get-pip.py
 local_settings.py
