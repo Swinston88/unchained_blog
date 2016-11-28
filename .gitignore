@@ -3,6 +3,8 @@ __pycache__/
 oursite/__pycache__/*
 *.pyc
 get-pip.py
+local_settings.py
+
 
 # ignore virtual environment
 myvenv/
