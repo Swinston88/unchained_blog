@@ -1,6 +1,6 @@
 # Unchained | a Blogging platform
 
-The deployed app can be found [here](http://unchainedblog.herokuapp.com)
+The deployed app can be found [here](http://unchainedblog.herokuapp.com).
 
 ## Using the Site
 
