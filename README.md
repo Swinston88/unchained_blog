@@ -34,7 +34,7 @@ Django/Python backend, postgreSQL, HTML, CSS, Javascript, JQuery.
 
 #### Things to work on
 * Viewing a facebook-authenticated user's profile isn't working.
-* Resizing images for both browser and mobile views.
+* Resizing images for both browser and mobile views and storing the images on a database. They are not working online at the minute.
 * Tidy up comment form and category form.
 * Add a few extra bits of post detail to the homepage (e.g number of likes, number of comments)
 * Improve post-logout screen.
